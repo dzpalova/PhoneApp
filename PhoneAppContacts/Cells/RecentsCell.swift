@@ -7,27 +7,28 @@ class RenectCallCell: UITableViewCell {
     @IBOutlet var typeCallLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
-    let timeDateFormatter: DateFormatter = {
+    static let timeDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         return dateFormatter
     }()
     
-    let mediumDateFormatter: DateFormatter = {
+    static let mediumDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         return dateFormatter
     }()
     
-    let fullDateFormatter: DateFormatter = {
+    static let fullDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter
     }()
     
-    let oneWeekTime: Double = -60 * 60 * 24 * 7
     
-    private func formateDate(call: RecentCall) -> String {
+    static func formateDate(call: RecentCall) -> String {
+        let oneWeekTime: Double = -60 * 60 * 24 * 7
+        
         if Calendar.current.isDateInToday(call.date!) {
             return timeDateFormatter.string(from: call.date!)
         } else if Calendar.current.isDateInYesterday(call.date!) {
@@ -48,7 +49,7 @@ class RenectCallCell: UITableViewCell {
         numberMissedCallsLabel.textColor = call.isMissed ? .red : .black
         
         typeCallLabel.text = call.type
-        dateLabel.text = formateDate(call: call)
+        dateLabel.text = Self.formateDate(call: call)
         isMissedIcon.isHidden = !call.isOutcome
     }
 }

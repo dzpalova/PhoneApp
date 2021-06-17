@@ -40,3 +40,30 @@ class NotesCell: UITableViewCell, ContactCell {
         notes.text = item.1
     }
 }
+
+class RecentCallsCell: UITableViewCell {
+    @IBOutlet var day: UILabel!
+    @IBOutlet var stackView: UIStackView!
+    
+    let timeDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }()
+
+    let fullDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter
+    }()
+    
+    func setup(_ calls: [RecentCall]) {
+        day.text = RenectCallCell.formateDate(call: calls[0])
+        
+        for call in calls {
+            let callData = UILabel(frame: CGRect(x: 0, y: 0, width: stackView.layer.borderWidth, height: 20))
+            callData.text = timeDateFormatter.string(from: call.date!)
+            stackView.addArrangedSubview(callData)
+        }
+    }
+}

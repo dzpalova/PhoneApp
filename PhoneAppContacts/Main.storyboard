@@ -1179,25 +1179,37 @@
                                     <outlet property="notes" destination="PZs-d1-O8R" id="2MQ-2p-tVL"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="66" id="cff-gI-YSD">
-                                <rect key="frame" x="20" y="517.5" width="374" height="66"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recentCallsCell" id="cff-gI-YSD" customClass="RecentCallsCell" customModule="PhoneAppContacts" customModuleProvider="target">
+                                <rect key="frame" x="20" y="517.5" width="374" height="86.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cff-gI-YSD" id="Zaa-Zq-kmX">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="66"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="86.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1M-7e-ecF">
-                                            <rect key="frame" x="20" y="11" width="41.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="20" y="21" width="50" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-M3-63X">
+                                            <rect key="frame" x="20" y="65" width="314" height="0.5"/>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="v1M-7e-ecF" firstAttribute="top" secondItem="Zaa-Zq-kmX" secondAttribute="topMargin" id="t24-U5-gMS"/>
+                                        <constraint firstItem="AA6-M3-63X" firstAttribute="leading" secondItem="Zaa-Zq-kmX" secondAttribute="leadingMargin" id="5AQ-qA-YHr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="AA6-M3-63X" secondAttribute="bottom" constant="10" id="CWZ-H5-RxA"/>
+                                        <constraint firstItem="AA6-M3-63X" firstAttribute="top" secondItem="v1M-7e-ecF" secondAttribute="bottom" constant="20" id="Dq6-0b-l6T"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AA6-M3-63X" secondAttribute="trailing" constant="20" id="Mcl-Py-G5C"/>
+                                        <constraint firstItem="v1M-7e-ecF" firstAttribute="top" secondItem="Zaa-Zq-kmX" secondAttribute="topMargin" constant="10" id="b2K-hQ-3A9"/>
+                                        <constraint firstItem="v1M-7e-ecF" firstAttribute="leading" secondItem="Zaa-Zq-kmX" secondAttribute="leadingMargin" id="f25-6r-RwU"/>
                                         <constraint firstItem="v1M-7e-ecF" firstAttribute="leading" secondItem="Zaa-Zq-kmX" secondAttribute="leadingMargin" id="vHk-m3-5ja"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="day" destination="v1M-7e-ecF" id="TIX-Hb-eSZ"/>
+                                    <outlet property="stackView" destination="AA6-M3-63X" id="RJv-CD-7CS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

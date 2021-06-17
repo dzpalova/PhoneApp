@@ -96,7 +96,7 @@ class RecentCallsTableController: UITableViewController {
         if segue.identifier == "showContactFromRecents" {
             let contactController = segue.destination as! ContactController
             contactController.contact = contactToOpen
-            contactController.isSenderRecentCall = true
+            contactController.recentCalls = recentCallStore.allCalls.first(where: { $0.})
         }
     }
 }

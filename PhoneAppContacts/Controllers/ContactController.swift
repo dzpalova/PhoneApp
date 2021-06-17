@@ -15,7 +15,7 @@ class ContactController: UITableViewController {
     var contact: Contact!
     var contactInfo: ContactInfo!
     
-    var isSenderRecentCall = false
+    var recentCalls: [RecentCall]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,10 @@ class ContactController: UITableViewController {
         
         contactInfo = contact.getContactInfo()
         items = ContactStore(contactInfo)
+        
+        if recentCalls != nil {
+            items.items.append([("","")])
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +44,12 @@ class ContactController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if recentCalls != nil && indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "recentCallsCell") as! RecentCallsCell
+            cell.setup(recentCalls)
+            return cell
+        }
+        
         let item = items.getItem(indexPath)
         
         var identifier = indexPath.section <= items.countSectionsWithInfo ? "typeValueCell" : "itemCell"
@@ -49,10 +59,6 @@ class ContactController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
         if let contactCell = cell as? ContactCell {
-//            if isSenderRecentCall {
-//                let c = contact.recents?.first(where: { $0 as! RecentCall == contactInfo.number[indexPath.row]} ){
-//                //contact.
-//            }
             contactCell.setup(item)
             return contactCell
         }
