@@ -1,0 +1,188 @@
+[
+    {
+        "number":
+        [
+            {
+                "type": "home",
+                "value": "089 4782637"
+            }
+        ],
+        "email":
+        [
+            {
+                "type": "work",
+                "value": "123@abv.bg"
+            },
+            {
+                "type": "mobile",
+                "value": "jjjjjjjjj@abv.bg"
+            },
+            {
+                "type": "workgg",
+                "value": "12gg3@abv.bg"
+            }
+        ],
+        "ringtone": "Default",
+        "textTone": "Default",
+        "url":
+        [
+            {
+                "type": "homepage",
+                "value": "http://www.icloud.com"
+            }
+        ],
+        "address":
+        [
+            {
+                "type": "home",
+                "value": {
+                    "street": "",
+                    "city": "Burgas",
+                    "state": "",
+                    "ZIP": "1000",
+                    "country": "Bulgaria"
+                }
+            }
+        ],
+        "birthday":
+        [
+            {
+                "type": "birthday",
+                "value": "July 01, 1998"
+            }
+        ],
+        "date": [],
+        "relatedName": [],
+        "socialProfile": [],
+        "instantMessage": [],
+    },
+    {
+        "number":
+        [
+            {
+                "type": "home",
+                "value": "088 4346631"
+            }
+        ],
+        "email":
+        [
+            {
+                "type": "work",
+                "value": "55555555@abv.bg"
+            }
+        ],
+        "ringtone": "Default",
+        "textTone": "Default",
+        "url": [],
+        "address":
+        [
+            {
+                "type": "home",
+                "value": {
+                    "street": "",
+                    "city": "Sofia",
+                    "state": "",
+                    "ZIP": "1000",
+                    "country": "Bulgaria"
+                }
+            }
+        ],
+        "birthday":
+        [
+            {
+                "type": "birthday",
+                "value": "January 24, 1985"
+            }
+        ],
+        "date": [],
+        "relatedName": [],
+        "socialProfile": [],
+        "instant message": [],
+    },
+    {
+        "number":
+        [
+            {
+                "type": "home",
+                "value": "088 4346631"
+            }
+        ],
+        "email":
+        [
+            {
+                "type": "work",
+                "value": "55555555@abv.bg"
+            }
+        ],
+        "ringtone": "Default",
+        "textTone": "Default",
+        "url": [],
+        "address":
+        [
+            {
+                "type": "home",
+                "value": {
+                    "street": "",
+                    "city": "Sofia",
+                    "state": "",
+                    "ZIP": "1000",
+                    "country": "Bulgaria"
+                }
+            }
+        ],
+        "birthday":
+        [
+            {
+                "type": "birthday",
+                "value": "January 24, 1985"
+            }
+        ],
+        "date": [],
+        "relatedName": [],
+        "socialProfile": [],
+        "instant message": [],
+    },
+    {
+        "number":
+        [
+            {
+                "type": "home",
+                "value": "088 4346631"
+            }
+        ],
+        "email":
+        [
+            {
+                "type": "work",
+                "value": "55555555@abv.bg"
+            }
+        ],
+        "ringtone": "Default",
+        "textTone": "Default",
+        "url": [],
+        "address":
+        [
+            {
+                "type": "home",
+                "value": {
+                    "street": "",
+                    "city": "Sofia",
+                    "state": "",
+                    "ZIP": "1000",
+                    "country": "Bulgaria"
+                }
+            }
+        ],
+        "birthday":
+        [
+            {
+                "type": "birthday",
+                "value": "January 24, 1985"
+            }
+        ],
+        "date": [],
+        "relatedName": [],
+        "socialProfile": [],
+        "instant message": [],
+    }
+]

@@ -1,0 +1,125 @@
+[
+    [
+        {
+            "name": "First name",
+            "type": "textField",
+            "detail": ""
+        },
+        {
+            "name": "Last name",
+            "type": "textField",
+            "detail": ""
+        },
+        {
+            "name": "Company",
+            "type": "textField",
+            "detail": ""
+        }
+    ],
+    [
+        {
+            "name": "add phone",
+            "type": "addItem",
+            "detail": "none"
+        }
+        
+    ],
+    [
+        {
+            "name": "add email",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "Ringtone",
+            "type": "detail",
+            "detail": "Default"
+        }
+    ],
+    [
+        {
+            "name": "Text Tone",
+            "type": "detail",
+            "detail": "Default"
+        }
+    ],
+    [
+        {
+            "name": "add url",
+            "type": "addItem",
+            "detail": "Default"
+        }
+    ],
+    [
+        {
+            "name": "add address",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "add birthday",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "add date",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "add related name",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "add social profile",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "add instant message",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "Notes",
+            "type": "notes",
+            "detail": ""
+        }
+    ],
+    [
+        {
+            "name": "add field",
+            "type": "text",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "link contacts...",
+            "type": "addItem",
+            "detail": "none"
+        }
+    ],
+    [
+        {
+            "name": "Delete Contact",
+            "type": "text",
+            "detail": "none"
+        }
+    ]
+]

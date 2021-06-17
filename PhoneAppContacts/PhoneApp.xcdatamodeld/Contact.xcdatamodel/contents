@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contact" representedClassName="Contact" syncable="YES">
+        <attribute name="company" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="otherInformation" optional="YES" attributeType="String"/>
+        <attribute name="photoName" optional="YES" attributeType="String"/>
+        <relationship name="favourites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Favorite" inverseName="contact" inverseEntity="Favorite"/>
+        <relationship name="recents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecentCall" inverseName="contact" inverseEntity="RecentCall"/>
+    </entity>
+    <entity name="Favorite" representedClassName="Favorite" syncable="YES">
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="typeCall" optional="YES" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="favourites" inverseEntity="Contact"/>
+    </entity>
+    <entity name="RecentCall" representedClassName="RecentCall" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="isMissed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isOutcome" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="numCalls" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="recents" inverseEntity="Contact"/>
+    </entity>
+    <elements>
+        <element name="Contact" positionX="-45" positionY="0" width="128" height="149"/>
+        <element name="Favorite" positionX="-36" positionY="81" width="128" height="74"/>
+        <element name="RecentCall" positionX="-45" positionY="45" width="128" height="134"/>
+    </elements>
+</model>

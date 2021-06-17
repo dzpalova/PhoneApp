@@ -1,0 +1,749 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CECC5DBE267A1705004CB067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DBD267A1705004CB067 /* AppDelegate.swift */; };
+		CECC5DC0267A1705004CB067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DBF267A1705004CB067 /* SceneDelegate.swift */; };
+		CECC5DC7267A1706004CB067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECC5DC6267A1706004CB067 /* Assets.xcassets */; };
+		CECC5DCA267A1706004CB067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC5DC8267A1706004CB067 /* LaunchScreen.storyboard */; };
+		CECC5DD5267A1706004CB067 /* PhoneAppContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DD4267A1706004CB067 /* PhoneAppContactsTests.swift */; };
+		CECC5DE0267A1706004CB067 /* PhoneAppContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DDF267A1706004CB067 /* PhoneAppContactsUITests.swift */; };
+		CECC5E0A267A172C004CB067 /* FavouritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DED267A172B004CB067 /* FavouritesStore.swift */; };
+		CECC5E0B267A172C004CB067 /* KeypadControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DEE267A172B004CB067 /* KeypadControl.swift */; };
+		CECC5E0C267A172C004CB067 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DEF267A172B004CB067 /* ContactCell.swift */; };
+		CECC5E0D267A172C004CB067 /* KeypadNumbersSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DF0267A172B004CB067 /* KeypadNumbersSource.swift */; };
+		CECC5E0E267A172C004CB067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC5DF1267A172B004CB067 /* Main.storyboard */; };
+		CECC5E0F267A172C004CB067 /* EditContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DF2267A172B004CB067 /* EditContactStore.swift */; };
+		CECC5E10267A172C004CB067 /* AddToFavouritesAlertCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DF3267A172B004CB067 /* AddToFavouritesAlertCells.swift */; };
+		CECC5E11267A172C004CB067 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DF4267A172B004CB067 /* ContactStore.swift */; };
+		CECC5E12267A172C004CB067 /* PhoneApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DF5267A172B004CB067 /* PhoneApp.xcdatamodeld */; };
+		CECC5E13267A172C004CB067 /* RecentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DF7267A172C004CB067 /* RecentsCell.swift */; };
+		CECC5E14267A172C004CB067 /* KeypadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DF8267A172C004CB067 /* KeypadViewController.swift */; };
+		CECC5E15267A172C004CB067 /* ContactsInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = CECC5DF9267A172C004CB067 /* ContactsInformation.json */; };
+		CECC5E16267A172C004CB067 /* RecentsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DFA267A172C004CB067 /* RecentsStore.swift */; };
+		CECC5E17267A172C004CB067 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DFB267A172C004CB067 /* FavouritesController.swift */; };
+		CECC5E18267A172C004CB067 /* AddToFavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DFC267A172C004CB067 /* AddToFavouritesController.swift */; };
+		CECC5E19267A172C004CB067 /* CustomCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DFD267A172C004CB067 /* CustomCellButton.swift */; };
+		CECC5E1A267A172C004CB067 /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DFE267A172C004CB067 /* NumberCollectionViewCell.swift */; };
+		CECC5E1B267A172C004CB067 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5DFF267A172C004CB067 /* ContactInfo.swift */; };
+		CECC5E1C267A172C004CB067 /* TypeItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E00267A172C004CB067 /* TypeItemController.swift */; };
+		CECC5E1D267A172C004CB067 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E01267A172C004CB067 /* ContactsViewController.swift */; };
+		CECC5E1E267A172C004CB067 /* AllContactsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E02267A172C004CB067 /* AllContactsStore.swift */; };
+		CECC5E1F267A172C004CB067 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E03267A172C004CB067 /* ConversationViewController.swift */; };
+		CECC5E20267A172C004CB067 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E04267A172C004CB067 /* ContactController.swift */; };
+		CECC5E21267A172C004CB067 /* EditContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E05267A172C004CB067 /* EditContactController.swift */; };
+		CECC5E22267A172C004CB067 /* RecentCallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E06267A172C004CB067 /* RecentCallsViewController.swift */; };
+		CECC5E23267A172C004CB067 /* ContactEditOptions.json in Resources */ = {isa = PBXBuildFile; fileRef = CECC5E07267A172C004CB067 /* ContactEditOptions.json */; };
+		CECC5E24267A172C004CB067 /* EditContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E08267A172C004CB067 /* EditContactCell.swift */; };
+		CECC5E25267A172C004CB067 /* FavouriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E09267A172C004CB067 /* FavouriteCell.swift */; };
+		CECC5E2C267A174B004CB067 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E26267A174B004CB067 /* Contact+CoreDataClass.swift */; };
+		CECC5E2D267A174B004CB067 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E27267A174B004CB067 /* Contact+CoreDataProperties.swift */; };
+		CECC5E2E267A174B004CB067 /* RecentCall+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E28267A174B004CB067 /* RecentCall+CoreDataClass.swift */; };
+		CECC5E2F267A174B004CB067 /* RecentCall+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E29267A174B004CB067 /* RecentCall+CoreDataProperties.swift */; };
+		CECC5E30267A174B004CB067 /* Favorite+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E2A267A174B004CB067 /* Favorite+CoreDataClass.swift */; };
+		CECC5E31267A174B004CB067 /* Favorite+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC5E2B267A174B004CB067 /* Favorite+CoreDataProperties.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CECC5DD1267A1706004CB067 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECC5DB2267A1705004CB067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CECC5DB9267A1705004CB067;
+			remoteInfo = PhoneAppContacts;
+		};
+		CECC5DDC267A1706004CB067 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CECC5DB2267A1705004CB067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CECC5DB9267A1705004CB067;
+			remoteInfo = PhoneAppContacts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CECC5DBA267A1705004CB067 /* PhoneAppContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneAppContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECC5DBD267A1705004CB067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CECC5DBF267A1705004CB067 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CECC5DC6267A1706004CB067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CECC5DC9267A1706004CB067 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CECC5DCB267A1706004CB067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECC5DD0267A1706004CB067 /* PhoneAppContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneAppContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECC5DD4267A1706004CB067 /* PhoneAppContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAppContactsTests.swift; sourceTree = "<group>"; };
+		CECC5DD6267A1706004CB067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECC5DDB267A1706004CB067 /* PhoneAppContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneAppContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CECC5DDF267A1706004CB067 /* PhoneAppContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAppContactsUITests.swift; sourceTree = "<group>"; };
+		CECC5DE1267A1706004CB067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECC5DED267A172B004CB067 /* FavouritesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesStore.swift; sourceTree = "<group>"; };
+		CECC5DEE267A172B004CB067 /* KeypadControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadControl.swift; sourceTree = "<group>"; };
+		CECC5DEF267A172B004CB067 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		CECC5DF0267A172B004CB067 /* KeypadNumbersSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadNumbersSource.swift; sourceTree = "<group>"; };
+		CECC5DF1267A172B004CB067 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CECC5DF2267A172B004CB067 /* EditContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContactStore.swift; sourceTree = "<group>"; };
+		CECC5DF3267A172B004CB067 /* AddToFavouritesAlertCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToFavouritesAlertCells.swift; sourceTree = "<group>"; };
+		CECC5DF4267A172B004CB067 /* ContactStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
+		CECC5DF6267A172B004CB067 /* Contact.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contact.xcdatamodel; sourceTree = "<group>"; };
+		CECC5DF7267A172C004CB067 /* RecentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsCell.swift; sourceTree = "<group>"; };
+		CECC5DF8267A172C004CB067 /* KeypadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadViewController.swift; sourceTree = "<group>"; };
+		CECC5DF9267A172C004CB067 /* ContactsInformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ContactsInformation.json; sourceTree = "<group>"; };
+		CECC5DFA267A172C004CB067 /* RecentsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsStore.swift; sourceTree = "<group>"; };
+		CECC5DFB267A172C004CB067 /* FavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
+		CECC5DFC267A172C004CB067 /* AddToFavouritesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToFavouritesController.swift; sourceTree = "<group>"; };
+		CECC5DFD267A172C004CB067 /* CustomCellButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellButton.swift; sourceTree = "<group>"; };
+		CECC5DFE267A172C004CB067 /* NumberCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberCollectionViewCell.swift; sourceTree = "<group>"; };
+		CECC5DFF267A172C004CB067 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		CECC5E00267A172C004CB067 /* TypeItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeItemController.swift; sourceTree = "<group>"; };
+		CECC5E01267A172C004CB067 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		CECC5E02267A172C004CB067 /* AllContactsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllContactsStore.swift; sourceTree = "<group>"; };
+		CECC5E03267A172C004CB067 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		CECC5E04267A172C004CB067 /* ContactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		CECC5E05267A172C004CB067 /* EditContactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContactController.swift; sourceTree = "<group>"; };
+		CECC5E06267A172C004CB067 /* RecentCallsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCallsViewController.swift; sourceTree = "<group>"; };
+		CECC5E07267A172C004CB067 /* ContactEditOptions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ContactEditOptions.json; sourceTree = "<group>"; };
+		CECC5E08267A172C004CB067 /* EditContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContactCell.swift; sourceTree = "<group>"; };
+		CECC5E09267A172C004CB067 /* FavouriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteCell.swift; sourceTree = "<group>"; };
+		CECC5E26267A174B004CB067 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CECC5E27267A174B004CB067 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CECC5E28267A174B004CB067 /* RecentCall+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentCall+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CECC5E29267A174B004CB067 /* RecentCall+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecentCall+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CECC5E2A267A174B004CB067 /* Favorite+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CECC5E2B267A174B004CB067 /* Favorite+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Favorite+CoreDataProperties.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CECC5DB7267A1705004CB067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECC5DCD267A1706004CB067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECC5DD8267A1706004CB067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CECC5DB1267A1705004CB067 = {
+			isa = PBXGroup;
+			children = (
+				CECC5E26267A174B004CB067 /* Contact+CoreDataClass.swift */,
+				CECC5E27267A174B004CB067 /* Contact+CoreDataProperties.swift */,
+				CECC5E28267A174B004CB067 /* RecentCall+CoreDataClass.swift */,
+				CECC5E29267A174B004CB067 /* RecentCall+CoreDataProperties.swift */,
+				CECC5E2A267A174B004CB067 /* Favorite+CoreDataClass.swift */,
+				CECC5E2B267A174B004CB067 /* Favorite+CoreDataProperties.swift */,
+				CECC5DBC267A1705004CB067 /* PhoneAppContacts */,
+				CECC5DD3267A1706004CB067 /* PhoneAppContactsTests */,
+				CECC5DDE267A1706004CB067 /* PhoneAppContactsUITests */,
+				CECC5DBB267A1705004CB067 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CECC5DBB267A1705004CB067 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CECC5DBA267A1705004CB067 /* PhoneAppContacts.app */,
+				CECC5DD0267A1706004CB067 /* PhoneAppContactsTests.xctest */,
+				CECC5DDB267A1706004CB067 /* PhoneAppContactsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECC5DBC267A1705004CB067 /* PhoneAppContacts */ = {
+			isa = PBXGroup;
+			children = (
+				CECC5DBF267A1705004CB067 /* SceneDelegate.swift */,
+				CECC5DBD267A1705004CB067 /* AppDelegate.swift */,
+				CECC5E33267A321F004CB067 /* Models */,
+				CECC5E32267A31E7004CB067 /* Controllers */,
+				CECC5E34267A323A004CB067 /* Cells */,
+				CECC5E07267A172C004CB067 /* ContactEditOptions.json */,
+				CECC5DF9267A172C004CB067 /* ContactsInformation.json */,
+				CECC5DFD267A172C004CB067 /* CustomCellButton.swift */,
+				CECC5DEE267A172B004CB067 /* KeypadControl.swift */,
+				CECC5DF0267A172B004CB067 /* KeypadNumbersSource.swift */,
+				CECC5DF1267A172B004CB067 /* Main.storyboard */,
+				CECC5DF5267A172B004CB067 /* PhoneApp.xcdatamodeld */,
+				CECC5DC6267A1706004CB067 /* Assets.xcassets */,
+				CECC5DC8267A1706004CB067 /* LaunchScreen.storyboard */,
+				CECC5DCB267A1706004CB067 /* Info.plist */,
+			);
+			path = PhoneAppContacts;
+			sourceTree = "<group>";
+		};
+		CECC5DD3267A1706004CB067 /* PhoneAppContactsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CECC5DD4267A1706004CB067 /* PhoneAppContactsTests.swift */,
+				CECC5DD6267A1706004CB067 /* Info.plist */,
+			);
+			path = PhoneAppContactsTests;
+			sourceTree = "<group>";
+		};
+		CECC5DDE267A1706004CB067 /* PhoneAppContactsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CECC5DDF267A1706004CB067 /* PhoneAppContactsUITests.swift */,
+				CECC5DE1267A1706004CB067 /* Info.plist */,
+			);
+			path = PhoneAppContactsUITests;
+			sourceTree = "<group>";
+		};
+		CECC5E32267A31E7004CB067 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CECC5E05267A172C004CB067 /* EditContactController.swift */,
+				CECC5DFC267A172C004CB067 /* AddToFavouritesController.swift */,
+				CECC5DFB267A172C004CB067 /* FavouritesController.swift */,
+				CECC5E04267A172C004CB067 /* ContactController.swift */,
+				CECC5E06267A172C004CB067 /* RecentCallsViewController.swift */,
+				CECC5E03267A172C004CB067 /* ConversationViewController.swift */,
+				CECC5E00267A172C004CB067 /* TypeItemController.swift */,
+				CECC5DFE267A172C004CB067 /* NumberCollectionViewCell.swift */,
+				CECC5DF8267A172C004CB067 /* KeypadViewController.swift */,
+				CECC5E01267A172C004CB067 /* ContactsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CECC5E33267A321F004CB067 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CECC5DFF267A172C004CB067 /* ContactInfo.swift */,
+				CECC5DF2267A172B004CB067 /* EditContactStore.swift */,
+				CECC5DF4267A172B004CB067 /* ContactStore.swift */,
+				CECC5DFA267A172C004CB067 /* RecentsStore.swift */,
+				CECC5DED267A172B004CB067 /* FavouritesStore.swift */,
+				CECC5E02267A172C004CB067 /* AllContactsStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CECC5E34267A323A004CB067 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CECC5E08267A172C004CB067 /* EditContactCell.swift */,
+				CECC5DF7267A172C004CB067 /* RecentsCell.swift */,
+				CECC5DF3267A172B004CB067 /* AddToFavouritesAlertCells.swift */,
+				CECC5E09267A172C004CB067 /* FavouriteCell.swift */,
+				CECC5DEF267A172B004CB067 /* ContactCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CECC5DB9267A1705004CB067 /* PhoneAppContacts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECC5DE4267A1706004CB067 /* Build configuration list for PBXNativeTarget "PhoneAppContacts" */;
+			buildPhases = (
+				CECC5DB6267A1705004CB067 /* Sources */,
+				CECC5DB7267A1705004CB067 /* Frameworks */,
+				CECC5DB8267A1705004CB067 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhoneAppContacts;
+			productName = PhoneAppContacts;
+			productReference = CECC5DBA267A1705004CB067 /* PhoneAppContacts.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CECC5DCF267A1706004CB067 /* PhoneAppContactsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECC5DE7267A1706004CB067 /* Build configuration list for PBXNativeTarget "PhoneAppContactsTests" */;
+			buildPhases = (
+				CECC5DCC267A1706004CB067 /* Sources */,
+				CECC5DCD267A1706004CB067 /* Frameworks */,
+				CECC5DCE267A1706004CB067 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CECC5DD2267A1706004CB067 /* PBXTargetDependency */,
+			);
+			name = PhoneAppContactsTests;
+			productName = PhoneAppContactsTests;
+			productReference = CECC5DD0267A1706004CB067 /* PhoneAppContactsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CECC5DDA267A1706004CB067 /* PhoneAppContactsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CECC5DEA267A1706004CB067 /* Build configuration list for PBXNativeTarget "PhoneAppContactsUITests" */;
+			buildPhases = (
+				CECC5DD7267A1706004CB067 /* Sources */,
+				CECC5DD8267A1706004CB067 /* Frameworks */,
+				CECC5DD9267A1706004CB067 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CECC5DDD267A1706004CB067 /* PBXTargetDependency */,
+			);
+			name = PhoneAppContactsUITests;
+			productName = PhoneAppContactsUITests;
+			productReference = CECC5DDB267A1706004CB067 /* PhoneAppContactsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CECC5DB2267A1705004CB067 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					CECC5DB9267A1705004CB067 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					CECC5DCF267A1706004CB067 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = CECC5DB9267A1705004CB067;
+					};
+					CECC5DDA267A1706004CB067 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = CECC5DB9267A1705004CB067;
+					};
+				};
+			};
+			buildConfigurationList = CECC5DB5267A1705004CB067 /* Build configuration list for PBXProject "PhoneAppContacts" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CECC5DB1267A1705004CB067;
+			productRefGroup = CECC5DBB267A1705004CB067 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CECC5DB9267A1705004CB067 /* PhoneAppContacts */,
+				CECC5DCF267A1706004CB067 /* PhoneAppContactsTests */,
+				CECC5DDA267A1706004CB067 /* PhoneAppContactsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CECC5DB8267A1705004CB067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECC5E15267A172C004CB067 /* ContactsInformation.json in Resources */,
+				CECC5DCA267A1706004CB067 /* LaunchScreen.storyboard in Resources */,
+				CECC5DC7267A1706004CB067 /* Assets.xcassets in Resources */,
+				CECC5E23267A172C004CB067 /* ContactEditOptions.json in Resources */,
+				CECC5E0E267A172C004CB067 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECC5DCE267A1706004CB067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECC5DD9267A1706004CB067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CECC5DB6267A1705004CB067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECC5E1B267A172C004CB067 /* ContactInfo.swift in Sources */,
+				CECC5E31267A174B004CB067 /* Favorite+CoreDataProperties.swift in Sources */,
+				CECC5E17267A172C004CB067 /* FavouritesController.swift in Sources */,
+				CECC5E20267A172C004CB067 /* ContactController.swift in Sources */,
+				CECC5E1A267A172C004CB067 /* NumberCollectionViewCell.swift in Sources */,
+				CECC5E30267A174B004CB067 /* Favorite+CoreDataClass.swift in Sources */,
+				CECC5E10267A172C004CB067 /* AddToFavouritesAlertCells.swift in Sources */,
+				CECC5E18267A172C004CB067 /* AddToFavouritesController.swift in Sources */,
+				CECC5E2F267A174B004CB067 /* RecentCall+CoreDataProperties.swift in Sources */,
+				CECC5E0F267A172C004CB067 /* EditContactStore.swift in Sources */,
+				CECC5E0C267A172C004CB067 /* ContactCell.swift in Sources */,
+				CECC5E24267A172C004CB067 /* EditContactCell.swift in Sources */,
+				CECC5E0D267A172C004CB067 /* KeypadNumbersSource.swift in Sources */,
+				CECC5E1E267A172C004CB067 /* AllContactsStore.swift in Sources */,
+				CECC5E1D267A172C004CB067 /* ContactsViewController.swift in Sources */,
+				CECC5E11267A172C004CB067 /* ContactStore.swift in Sources */,
+				CECC5E12267A172C004CB067 /* PhoneApp.xcdatamodeld in Sources */,
+				CECC5E19267A172C004CB067 /* CustomCellButton.swift in Sources */,
+				CECC5E1C267A172C004CB067 /* TypeItemController.swift in Sources */,
+				CECC5E0B267A172C004CB067 /* KeypadControl.swift in Sources */,
+				CECC5E2D267A174B004CB067 /* Contact+CoreDataProperties.swift in Sources */,
+				CECC5E13267A172C004CB067 /* RecentsCell.swift in Sources */,
+				CECC5E21267A172C004CB067 /* EditContactController.swift in Sources */,
+				CECC5E14267A172C004CB067 /* KeypadViewController.swift in Sources */,
+				CECC5E0A267A172C004CB067 /* FavouritesStore.swift in Sources */,
+				CECC5E2C267A174B004CB067 /* Contact+CoreDataClass.swift in Sources */,
+				CECC5E2E267A174B004CB067 /* RecentCall+CoreDataClass.swift in Sources */,
+				CECC5E22267A172C004CB067 /* RecentCallsViewController.swift in Sources */,
+				CECC5E25267A172C004CB067 /* FavouriteCell.swift in Sources */,
+				CECC5DBE267A1705004CB067 /* AppDelegate.swift in Sources */,
+				CECC5E16267A172C004CB067 /* RecentsStore.swift in Sources */,
+				CECC5DC0267A1705004CB067 /* SceneDelegate.swift in Sources */,
+				CECC5E1F267A172C004CB067 /* ConversationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECC5DCC267A1706004CB067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECC5DD5267A1706004CB067 /* PhoneAppContactsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CECC5DD7267A1706004CB067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CECC5DE0267A1706004CB067 /* PhoneAppContactsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CECC5DD2267A1706004CB067 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CECC5DB9267A1705004CB067 /* PhoneAppContacts */;
+			targetProxy = CECC5DD1267A1706004CB067 /* PBXContainerItemProxy */;
+		};
+		CECC5DDD267A1706004CB067 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CECC5DB9267A1705004CB067 /* PhoneAppContacts */;
+			targetProxy = CECC5DDC267A1706004CB067 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CECC5DC8267A1706004CB067 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CECC5DC9267A1706004CB067 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CECC5DE2267A1706004CB067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CECC5DE3267A1706004CB067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CECC5DE5267A1706004CB067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhoneAppContacts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Infinno.PhoneAppContacts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CECC5DE6267A1706004CB067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhoneAppContacts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Infinno.PhoneAppContacts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CECC5DE8267A1706004CB067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhoneAppContactsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Infinno.PhoneAppContactsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneAppContacts.app/PhoneAppContacts";
+			};
+			name = Debug;
+		};
+		CECC5DE9267A1706004CB067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhoneAppContactsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Infinno.PhoneAppContactsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneAppContacts.app/PhoneAppContacts";
+			};
+			name = Release;
+		};
+		CECC5DEB267A1706004CB067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhoneAppContactsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Infinno.PhoneAppContactsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PhoneAppContacts;
+			};
+			name = Debug;
+		};
+		CECC5DEC267A1706004CB067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhoneAppContactsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Infinno.PhoneAppContactsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PhoneAppContacts;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CECC5DB5267A1705004CB067 /* Build configuration list for PBXProject "PhoneAppContacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECC5DE2267A1706004CB067 /* Debug */,
+				CECC5DE3267A1706004CB067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CECC5DE4267A1706004CB067 /* Build configuration list for PBXNativeTarget "PhoneAppContacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECC5DE5267A1706004CB067 /* Debug */,
+				CECC5DE6267A1706004CB067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CECC5DE7267A1706004CB067 /* Build configuration list for PBXNativeTarget "PhoneAppContactsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECC5DE8267A1706004CB067 /* Debug */,
+				CECC5DE9267A1706004CB067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CECC5DEA267A1706004CB067 /* Build configuration list for PBXNativeTarget "PhoneAppContactsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CECC5DEB267A1706004CB067 /* Debug */,
+				CECC5DEC267A1706004CB067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CECC5DF5267A172B004CB067 /* PhoneApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CECC5DF6267A172B004CB067 /* Contact.xcdatamodel */,
+			);
+			currentVersion = CECC5DF6267A172B004CB067 /* Contact.xcdatamodel */;
+			path = PhoneApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CECC5DB2267A1705004CB067 /* Project object */;
+}
