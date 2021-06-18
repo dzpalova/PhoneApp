@@ -11,7 +11,7 @@ import CoreData
 
 @objc(RecentCall)
 public class RecentCall: NSManagedObject {
-    func saveData() {
+    static func saveData() {
         do {
             try AllContactsStore.viewContext.save()
         } catch {

@@ -4,6 +4,7 @@ class RecentCallsTableController: UITableViewController {
     var recentCallStore = SceneDelegate.recentCallStore
     
     var contactToOpen: Contact!
+    var indexOfRexentCallsToOpen: IndexPath!
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var clearAllButton: UIBarButtonItem!
@@ -39,11 +40,13 @@ class RecentCallsTableController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         title = "Recents"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        recentCallStore = RecentsStore()
         tableView.reloadData()
     }
     
@@ -69,10 +72,10 @@ class RecentCallsTableController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "callCell", for: indexPath) as! RenectCallCell
-        let call = segmentedControl.selectedSegmentIndex == 0 ?
-            recentCallStore.getCall(at: indexPath) : recentCallStore.getMissedCall(at: indexPath)
-        cell.setCell(with: call)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "callCell", for: indexPath) as! RecentCallCell
+        let calls = segmentedControl.selectedSegmentIndex == 0 ?
+            recentCallStore.getCalls(at: indexPath) : recentCallStore.getMissedCalls(at: indexPath)
+        cell.setCell(with: calls)
         return cell
     }
     
@@ -89,6 +92,7 @@ class RecentCallsTableController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         contactToOpen = recentCallStore.getContact(idx: indexPath)
+        indexOfRexentCallsToOpen = indexPath
         performSegue(withIdentifier: "showContactFromRecents", sender: self)
     }
     
@@ -96,7 +100,7 @@ class RecentCallsTableController: UITableViewController {
         if segue.identifier == "showContactFromRecents" {
             let contactController = segue.destination as! ContactController
             contactController.contact = contactToOpen
-            contactController.recentCalls = recentCallStore.allCalls.first(where: { $0.})
+            contactController.recentCalls = recentCallStore.allCalls.first(where: { $0.first?.contact == contactToOpen })
         }
     }
 }

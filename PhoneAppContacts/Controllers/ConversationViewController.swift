@@ -6,9 +6,14 @@ class ConversationViewController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     @IBOutlet var labels: [UILabel]!
     @IBOutlet var endConversationButton: UIButton!
+    var contactName: String!
     var number: String!
     var contactObject: Contact!
     var recentCalls: [RecentCall]!
+    
+    var time = Timer()
+    var seconds = 0
+    var minutes = 0
     
     let callStore = SceneDelegate.recentCallStore
     
@@ -35,8 +40,8 @@ class ConversationViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        number = number ?? contactObject.getFullName()
-        contact.text = number
+        contactName = contactName ?? contactObject.getFullName()
+        contact.text = contactName
         buttons.forEach {
             makeButtonRounded($0)
         }
@@ -50,45 +55,41 @@ class ConversationViewController: UIViewController {
         numberLabel.isHidden = true
         hideButton.isHidden = true
         makeButtonRounded(endConversationButton)
+        
+        time = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
-    private func createRecentCall(contact: Contact?, fullName: String, numCalls: Int64, type: String, date: Date, isMissed: Bool, isOutgoing: Bool) -> RecentCall {
-        let newCall = RecentCall(context: AllContactsStore.viewContext)
-        newCall.contact = contact
-        newCall.date = date
-        newCall.type = type
-        newCall.isMissed = isMissed
-        newCall.isOutcome = isOutgoing
-        newCall.numCalls = numCalls
-        newCall.fullName = fullName
-        
-        do {
-            try AllContactsStore.viewContext.save()
-        } catch {
-            print("Error saving to Core Data", error)
+    func pad(_ n: Int) -> String {
+        return n > 9 ? "\(n)" : "0\(n)"
+    }
+    
+    @objc func updateTime() {
+        if seconds == 60 {
+            seconds = 0
+            minutes += 1
         }
         
-        return newCall
+        timer.text = pad(minutes) + ":" + pad(seconds)
+        seconds += 1
     }
     
     @IBAction func endConversation(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
-        if number != nil && number.isEmpty {
-            return 
+        if contactName != nil && contactName.isEmpty {
+            return
         }
         
         if callStore.callsCount() == 0 {
-            let call = createRecentCall(contact: contactObject, fullName: number, numCalls: 1, type: "mobile", date: Date(), isMissed: false, isOutgoing: true)
-            callStore.allCalls.append(call)
+            let call = RecentsStore.shared.createRecentCall(contact: contactObject, number: number, type: "mobile", date: Date(), isMissed: false, isOutcome: false, timeInSeconds: minutes * 60 + seconds)
+            callStore.allCalls.append([call])
             return
         }
-        let lastCall = callStore.getCall(at: IndexPath(row: 0, section: 0))
-        if lastCall.fullName != number || lastCall.isMissed {
-            let call = createRecentCall(contact: contactObject, fullName: number, numCalls: 1, type: "mobile", date: Date(), isMissed: false, isOutgoing: true)
-            callStore.allCalls.insert(call, at: 0)
+        let lastCall = callStore.getCalls(at: IndexPath(row: 0, section: 0))
+        let call = RecentsStore.shared.createRecentCall(contact: contactObject, number: number, type: "mobile", date: Date(), isMissed: false, isOutcome: false, timeInSeconds: minutes * 60 + seconds)
+        if lastCall.first!.number != number || lastCall.first!.isMissed {
+            callStore.allCalls.insert([call], at: 0)
         } else {
-            callStore.allCalls[0].numCalls += 1
-            callStore.allCalls[0].saveData()
+            callStore.allCalls[0].append(call)
         }
     }
     

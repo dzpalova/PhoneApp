@@ -33,6 +33,7 @@ class AddToFavouritesController: UIViewController ,UITableViewDataSource, UITabl
     @IBAction func tapGestureAction(_ sender: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -50,7 +51,7 @@ class AddToFavouritesController: UIViewController ,UITableViewDataSource, UITabl
         if items[3].contactData.isEmpty {
             items.remove(at: 3)
         }
-        items[3].contactData.removeLast()
+        //items[3].contactData.removeLast()
         items.remove(at: 2)
         
         tableViewTopConstraint.constant = view.frame.height - (CGFloat(items.count) * rowHeight) - 163

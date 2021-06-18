@@ -54,6 +54,7 @@ class EditContactController: UITableViewController {
                 contactsVC.contactItems = contactsVC.allContactItems
                 contactsVC.tableView.reloadData()
             }
+            //contactsVC.viewWillAppear(true)
         }
     }
     
@@ -152,10 +153,10 @@ class EditContactController: UITableViewController {
             let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             let deleteAction = UIAlertAction(title: "Delete Contact", style: .destructive) {_ in
+                //self.performSegue(withIdentifier: "fromEditToContacts", sender: Self.self)
+                self.dismiss(animated: true)
                 self.contact.delete()
-                self.performSegue(withIdentifier: "fromEditToContacts", sender: Self.self)
-                //self.dismiss(animated: true)
-                //(self.presentingViewController as? UINavigationController)?.popToRootViewController(animated: true)
+                (self.presentingViewController as? UINavigationController)?.popToRootViewController(animated: true)
             }
             
             controller.addAction(cancelAction)

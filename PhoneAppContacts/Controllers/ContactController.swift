@@ -35,7 +35,8 @@ class ContactController: UITableViewController {
         items = ContactStore(contactInfo)
         
         if recentCalls != nil {
-            items.items.append([("","")])
+            items.items.insert(([("", "")]), at: 0)
+            //recentCalls = RecentsStore.shared.allCalls.first(where: { $0.first?.contact == contact })
         }
     }
     
@@ -58,6 +59,14 @@ class ContactController: UITableViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier)!
+        if let typeValueCell = cell as? TypeValueCell {
+            if recentCalls != nil {
+                let recent = recentCalls.first(where: { $0.number == item.1 })
+                typeValueCell.isMissed = recent != nil && recent?.isMissed == true
+                typeValueCell.isRecentLabel.isHidden = (recent == nil)
+            }
+            typeValueCell.isFavourite = FavouritesStore.shared.favourites.contains(where: { $0.number == item.1 } )
+        }
         if let contactCell = cell as? ContactCell {
             contactCell.setup(item)
             return contactCell
@@ -68,8 +77,12 @@ class ContactController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 && !contactInfo.number.isEmpty {
             performSegue(withIdentifier: "callFromContact", sender: self)
-        } else if indexPath.section == items.numSections() - 4 && indexPath.row == 2 { // Cell Add to favourites
+        } else if indexPath.section == items.numSections() - 6 && indexPath.row == 2 { // Cell Add to favourites
             performSegue(withIdentifier: "showAddToFavouritesAlertController", sender: self)
+        } else if indexPath.section == items.numSections() - 1 { //Outcoming Call
+            RecentsStore.shared.createRecentCall(contact: contact, number: contactInfo.number.first!.value, type: "mobile", date: Date(), isMissed: false, isOutcome: true, timeInSeconds: 33)
+        } else if indexPath.section == items.numSections() - 2 { //Missed Call
+            RecentsStore.shared.createRecentCall(contact: contact, number: contactInfo.number.first!.value, type: "mobile", date: Date(), isMissed: true, isOutcome: true, timeInSeconds: 0)
         }
     }
     
@@ -90,6 +103,7 @@ class ContactController: UITableViewController {
         case "callFromContact":
             let convController = segue.destination as! ConversationViewController
             convController.contactObject = contact
+            convController.number = items.getItem(tableView.indexPathForSelectedRow!).1
         case "showAddToFavouritesAlertController":
             let alertController = segue.destination as! AddToFavouritesController
             alertController.contact = contact
