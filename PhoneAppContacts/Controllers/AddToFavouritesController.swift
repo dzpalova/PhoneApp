@@ -34,26 +34,21 @@ class AddToFavouritesController: UIViewController ,UITableViewDataSource, UITabl
         dismiss(animated: true, completion: nil)
     }
     
+    private func initItemsFromContactInfo() {
+        for num in contactInfo.number {
+            items[0].contactData.append((num.type, num.value))
+            items[1].contactData.append((num.type, num.value))
+        }
+        contactInfo.email.forEach { items[3].contactData.append(($0.type, $0.value)) }
+        items = items.filter { !$0.contactData.isEmpty }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
-        contactInfo.number.forEach { items[0].contactData.append(($0.type, $0.value)) }
-        if items[0].contactData.isEmpty {
-            items.remove(at: 0)
-        }
-        contactInfo.number.forEach { items[1].contactData.append(($0.type, $0.value)) }
-        if items[1].contactData.isEmpty {
-            items.remove(at: 1)
-        }
-        contactInfo.email.forEach { items[3].contactData.append(($0.type, $0.value)) }
-        if items[3].contactData.isEmpty {
-            items.remove(at: 3)
-        }
-        //items[3].contactData.removeLast()
-        items.remove(at: 2)
-        
+        initItemsFromContactInfo()
         tableViewTopConstraint.constant = view.frame.height - (CGFloat(items.count) * rowHeight) - 163
     }
     

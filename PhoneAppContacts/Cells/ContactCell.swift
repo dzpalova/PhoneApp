@@ -13,7 +13,6 @@ extension UIStackView {
             self.removeArrangedSubview(subview)
             return allSubviews + [subview]
         }
-//        NSLayoutConstraint.deactivate(removedSubviews.flatMap({ $0.constraints }))
         removedSubviews.forEach({ $0.removeFromSuperview() })
     }
 }
@@ -31,15 +30,16 @@ class TypeValueCell: UITableViewCell, ContactCell {
     
     var isMissed = false
     var isFavourite = false
+    var isRecent = false
     
     func setup(_ item: (String, String)) {
         name.text = item.0
         number.text = item.1
         //name.textColor = isMissed ? .red : .black
-        
         number.textColor = isMissed ? .red : .link
         
         isFavouriteImage.isHidden = !isFavourite
+        isRecentLabel.isHidden = !isRecent
         favouriteToRecentConstraint.constant = isFavourite ? 5 : -isFavouriteImage.bounds.width
     }
 }

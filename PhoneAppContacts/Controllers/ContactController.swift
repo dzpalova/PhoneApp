@@ -36,7 +36,7 @@ class ContactController: UITableViewController {
         
         if recentCalls != nil {
             items.items.insert(([("", "")]), at: 0)
-            //recentCalls = RecentsStore.shared.allCalls.first(where: { $0.first?.contact == contact })
+            //recentCalls = RecentsStore.shared.getCalls(at: idx)
         }
     }
     
@@ -63,7 +63,7 @@ class ContactController: UITableViewController {
             if recentCalls != nil {
                 let recent = recentCalls.first(where: { $0.number == item.1 })
                 typeValueCell.isMissed = recent != nil && recent?.isMissed == true
-                typeValueCell.isRecentLabel.isHidden = (recent == nil)
+                typeValueCell.isRecent = (recent != nil)
             }
             typeValueCell.isFavourite = FavouritesStore.shared.favourites.contains(where: { $0.number == item.1 } )
         }

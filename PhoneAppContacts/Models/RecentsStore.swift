@@ -60,7 +60,7 @@ class RecentsStore {
         return calls
     }
     
-    func createRecentCall(contact: Contact?, number: String, type: String, date: Date, isMissed: Bool, isOutcome: Bool, timeInSeconds: Int) -> RecentCall {
+    @discardableResult func createRecentCall(contact: Contact?, number: String, type: String, date: Date, isMissed: Bool, isOutcome: Bool, timeInSeconds: Int) -> RecentCall {
         let newCall = RecentCall(context: AllContactsStore.viewContext)
         newCall.contact = contact
         newCall.date = date
