@@ -13,11 +13,10 @@ class TypeItemController: UITableViewController {
     var selectedTypeIndex: Int!
     
     var cellButtonToChange: CustomCellButton!
-    var oldButtonValue: String!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        oldButtonValue = cellButtonToChange.titleLabel?.text
+        selectedTypeIndex = types.firstIndex(where: { $0 == cellButtonToChange.titleLabel?.text })
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,7 +35,7 @@ class TypeItemController: UITableViewController {
         let type = selectedTypeIndex == -1 ? "home" : types[selectedTypeIndex]
         cellButtonToChange.contactInfo.changeType(at: cellButtonToChange.indexOfCell, with: type)
         cellButtonToChange.setTitle(type, for: .normal)
-        tableView.reloadData()
+        dismiss(animated: true, completion: nil)
     }
 
     override func tableView(_ tableView: UITableView,
@@ -46,8 +45,6 @@ class TypeItemController: UITableViewController {
     }
 
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        cellButtonToChange.setTitle(oldButtonValue, for: .normal)
-        cellButtonToChange.contactInfo.changeType(at: cellButtonToChange.indexOfCell, with: oldButtonValue)
         dismiss(animated: true, completion: nil)
     }
 }

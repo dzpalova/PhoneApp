@@ -9,8 +9,8 @@ import UIKit
 
 class FavouritesController: UITableViewController {
     var favouritesStore = FavouritesStore.shared
-    
-    var contactToOpen: Contact!
+
+    var indexOfFavouriteContactToOpen: IndexPath!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -56,14 +56,28 @@ class FavouritesController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        contactToOpen = favouritesStore.favourites[indexPath.row].contact
+        indexOfFavouriteContactToOpen = indexPath
         performSegue(withIdentifier: "showContactFromFavourites", sender: self)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexOfFavouriteContactToOpen = indexPath
+        performSegue(withIdentifier: "callFromFavourites", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showContactFromFavourites" {
+        let favourite = favouritesStore.favourites[indexOfFavouriteContactToOpen.row]
+        
+        switch segue.identifier {
+        case "showContactFromFavourites":
             let contactController = segue.destination as! ContactController
-            contactController.contact = contactToOpen
+            contactController.contact = favourite.contact
+        case "callFromFavourites":
+            let convController = segue.destination as! ConversationViewController
+            convController.contactObject = favourite.contact
+            convController.number = favourite.number
+        default:
+            break
         }
     }
 }

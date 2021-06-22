@@ -135,13 +135,8 @@ class EditContactController: UITableViewController {
             typeCell = detail == .date || detail == .birthday ? .removeDate : typeCell
             
             let typeItem = typePhoneLabels[typeItemLabelToInsert]
-            
-//            if detail == .address {
-//                contactInfo.address.append(TypeValue(type: typeItem, value: Address(street: "", city: "", state: "", ZIP: "", country: "")))
-//            } else {
-                contactInfo.insertItem(item: TypeValue(type: typeItem, value: ""), at: indexPath)
-//            }
-                editItems.items[indexPath.section].insert(EditContactItem(name: typeItem, type: typeCell, detail: detail.rawValue),
+            contactInfo.insertItem(item: TypeValue(type: typeItem, value: ""), at: indexPath)
+            editItems.items[indexPath.section].insert(EditContactItem(name: typeItem, type: typeCell, detail: detail.rawValue),
                                                       at: editItems.numRowsInSection(indexPath.section) - 1)
             typeItemLabelToInsert = typeItemLabelToInsert == typePhoneLabels.count ? 0 : typeItemLabelToInsert + 1
             tableView.insertRows(at: [indexPath], with: .none)
@@ -152,11 +147,11 @@ class EditContactController: UITableViewController {
         if indexPath.section == editItems.numSections - 1 {
             let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let deleteAction = UIAlertAction(title: "Delete Contact", style: .destructive) {_ in
-                //self.performSegue(withIdentifier: "fromEditToContacts", sender: Self.self)
-                self.dismiss(animated: true)
+            let deleteAction = UIAlertAction(title: "Delete Contact", style: .destructive) { _ in
+                self.performSegue(withIdentifier: "fromEditToContacts", sender: Self.self)
+//                self.dismiss(animated: true)
+//                (self.presentingViewController as? UINavigationController)?.popToRootViewController(animated: true)
                 self.contact.delete()
-                (self.presentingViewController as? UINavigationController)?.popToRootViewController(animated: true)
             }
             
             controller.addAction(cancelAction)

@@ -14,7 +14,7 @@
         <scene sceneID="2rx-aw-Cfp">
             <objects>
                 <tableViewController id="6CJ-tJ-jQs" customClass="RecentCallsTableController" customModule="PhoneAppContacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sfs-D0-fzQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sfs-D0-fzQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -117,6 +117,7 @@
                         <outlet property="clearAllButton" destination="LKc-5i-FMz" id="pON-AQ-85e"/>
                         <outlet property="segmentedControl" destination="7kG-6O-pBa" id="q3a-cE-prZ"/>
                         <segue destination="lEM-LF-FFB" kind="show" identifier="showContactFromRecents" id="LtW-3d-zHp"/>
+                        <segue destination="0oz-L8-P2Z" kind="presentation" identifier="callFromRecents" modalPresentationStyle="fullScreen" id="B3F-Dd-nIe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZG-4H-c1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -264,7 +265,7 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="6910.144927536232" y="178.79464285714286"/>
+            <point key="canvasLocation" x="7606" y="954"/>
         </scene>
         <!--Keypad-->
         <scene sceneID="rem-jz-Cv2">
@@ -350,7 +351,7 @@
             <objects>
                 <tableViewController id="A7a-dg-S2T" customClass="EditContactController" customModule="PhoneAppContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="25" sectionFooterHeight="18" id="Kul-Pn-RNv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="DXa-y4-ST2">
@@ -873,7 +874,7 @@
             <objects>
                 <tableViewController id="lEM-LF-FFB" customClass="ContactController" customModule="PhoneAppContacts" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="10" sectionFooterHeight="7" contentViewInsetsToSafeArea="NO" id="8Qh-z4-PwQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Jua-55-bqp">
@@ -1260,12 +1261,16 @@
                     <connections>
                         <outlet property="contactName" destination="l2F-dQ-a7G" id="bHp-kM-a1r"/>
                         <outlet property="contactPhoto" destination="58S-Tj-Jks" id="ehu-nm-O3b"/>
+                        <outletCollection property="buttons" destination="vJF-Dr-P9x" collectionClass="NSMutableArray" id="AWV-av-Q2G"/>
+                        <outletCollection property="buttons" destination="Cc8-mm-pt9" collectionClass="NSMutableArray" id="b3x-Su-BRg"/>
+                        <outletCollection property="buttons" destination="CUq-Ip-bec" collectionClass="NSMutableArray" id="2LG-30-XXh"/>
+                        <outletCollection property="buttons" destination="r1s-nh-6lS" collectionClass="NSMutableArray" id="0hE-sU-65X"/>
                         <segue destination="2Sb-J8-XeG" kind="presentation" identifier="showAddToFavouritesAlertController" id="t4S-tJ-hXa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ec-8t-IUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5592.753623188406" y="906.69642857142856"/>
+            <point key="canvasLocation" x="5406" y="990"/>
         </scene>
         <!--Conversation View Controller-->
         <scene sceneID="uoB-Z8-8Lw">
@@ -1535,7 +1540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFx-hf-lU2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6510" y="907"/>
+            <point key="canvasLocation" x="6488" y="990"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pMM-ae-Du6">
@@ -1574,6 +1579,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REA-aS-yyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6160.8695652173919" y="178.79464285714286"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gxv-8n-QrT">
+            <objects>
+                <viewController id="Wqv-oV-kUX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kC4-jv-ajH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-6O-3gq">
+                                <rect key="frame" x="284" y="327" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NMi-8w-4mK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SDd-2w-cMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6941" y="183"/>
         </scene>
         <!--Favourites Controller-->
         <scene sceneID="bbL-Gh-TPu">
@@ -1670,6 +1696,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="lEM-LF-FFB" kind="show" identifier="showContactFromFavourites" id="59G-Zj-f70"/>
+                        <segue destination="0oz-L8-P2Z" kind="presentation" identifier="callFromFavourites" modalPresentationStyle="fullScreen" id="2gd-Gl-UHc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7P-k1-qdJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1875,7 +1902,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1Az-40-XoQ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gLw-DE-N3h">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1927,9 +1954,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NaL-ms-Npx"/>
-        <segue reference="n8K-cf-qBR"/>
+        <segue reference="qBP-9A-0ej"/>
         <segue reference="38S-mn-Dz4"/>
-        <segue reference="59G-Zj-f70"/>
+        <segue reference="Ic8-F7-95c"/>
         <segue reference="UNp-S8-lyK"/>
     </inferredMetricsTieBreakers>
     <resources>
