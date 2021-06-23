@@ -3,9 +3,16 @@ import CoreData
 
 class RecentsStore {
     static var shared = RecentsStore()
-    var allCalls: [RecentCall]
-    var missedCalls: [RecentCall] {
-        return allCalls.filter { $0.isMissed }
+    var allCalls: [[RecentCall]]
+    var missedCalls: [[RecentCall]] {
+        var arr = [[RecentCall]]()
+        for el in allCalls {
+            let innerArr = el.filter { $0.isMissed }
+            if !innerArr.isEmpty {
+                arr.append(innerArr)
+            }
+        }
+        return arr
     }
     
     static let dateFormatter: DateFormatter = {
@@ -13,71 +20,99 @@ class RecentsStore {
         dateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
         return dateFormatter
     }()
-    
-    static let callArchiveURL: URL = {
-        let documentsDirectories = FileManager.default.urls(for: .documentDirectory,
-                                                                in: .userDomainMask)
-        let documentDirectory = documentsDirectories.first!
-        return documentDirectory.appendingPathComponent("calls.json")
-    }()
-    
+
     init() {
-        print(RecentsStore.callArchiveURL)
         allCalls = []
-        loadData()
-        
-        allCalls.sort { $0.date!.compare($1.date!) == .orderedDescending }
+        var calls = loadData()
+        parseRecentCalls(&calls)
     }
     
-    private func loadData() {
+    private func parseRecentCalls(_ calls: inout [RecentCall]) {
+        if calls.isEmpty {
+            return
+        }
+        calls.sort { $0.date!.compare($1.date!) == .orderedDescending }
+        allCalls.append([calls[0]])
+        for call in calls[1...] {
+            let currentCallDate = RecentCallCell.mediumDateFormatter.string(from: call.date!)
+            let lastCallDate = RecentCallCell.mediumDateFormatter.string(from: allCalls.last!.first!.date!)
+            
+            if call.number == allCalls.last?.first?.number
+                && call.isMissed == allCalls.last?.first?.isMissed
+                && currentCallDate == lastCallDate {
+                
+                allCalls[allCalls.count - 1].append(call)
+            } else {
+                allCalls.append([call])
+            }
+        }
+    }
+    
+    private func loadData() -> [RecentCall] {
         let fetchRequest: NSFetchRequest<RecentCall> = RecentCall.fetchRequest()
-
+        var calls = [RecentCall]()
         do {
-            allCalls = try AllContactsStore.viewContext.fetch(fetchRequest)
+            calls = try AllContactsStore.viewContext.fetch(fetchRequest)
             
         } catch {
             print("Error loading recents",error)
         }
+        return calls
+    }
+    
+    @discardableResult func createRecentCall(contact: Contact?, number: String, type: String, date: Date, isMissed: Bool, isOutcome: Bool, timeInSeconds: Int) -> RecentCall {
+        let newCall = RecentCall(context: AllContactsStore.viewContext)
+        newCall.contact = contact
+        newCall.date = date
+        newCall.type = type
+        newCall.isMissed = isMissed
+        newCall.isOutcome = isOutcome
+        newCall.number = number
+        newCall.timeInSeconds = Int64(timeInSeconds)
         
         do {
             try AllContactsStore.viewContext.save()
         } catch {
             print("Error saving to Core Data", error)
         }
+        
+        return newCall
     }
     
     func callsCount() -> Int {
         return allCalls.count
     }
     
-    func getCall(at indexPath: IndexPath) -> RecentCall {
+    func getCalls(at indexPath: IndexPath) -> [RecentCall] {
         return allCalls[indexPath.row]
     }
     
     func getContact(idx: IndexPath) -> Contact {
-        return allCalls[idx.row].contact!
+        return allCalls[idx.row].first!.contact!
     }
     
     func missedCallsCount() -> Int {
         return missedCalls.count
     }
     
-    func getMissedCall(at indexPath: IndexPath) -> RecentCall {
+    func getMissedCalls(at indexPath: IndexPath) -> [RecentCall] {
         return missedCalls[indexPath.row]
     }
     
     func removeCall(at idx: IndexPath) {
-        AllContactsStore.viewContext.delete(allCalls[idx.row])
+        allCalls[idx.row].forEach { AllContactsStore.viewContext.delete($0) }
         allCalls.remove(at: idx.row)
+        RecentCall.saveData()
     }
     
     func removeMissedCall(at idx: IndexPath) {
         var count = 0
         for i in 0 ..< allCalls.count {
-            if allCalls[i].isMissed {
+            if allCalls[i].first!.isMissed {
                 if count == idx.row {
-                    AllContactsStore.viewContext.delete(allCalls[i])
+                    allCalls[i].forEach { AllContactsStore.viewContext.delete($0) }
                     allCalls.remove(at: i)
+                    RecentCall.saveData()
                     break
                 }
                 count += 1
@@ -86,6 +121,10 @@ class RecentsStore {
     }
     
     func deleteAll() {
+        for calls in allCalls {
+            calls.forEach { AllContactsStore.viewContext.delete($0) }
+        }
+        RecentCall.saveData()
         allCalls = []
     }
 }

@@ -17,10 +17,10 @@
     </entity>
     <entity name="RecentCall" representedClassName="RecentCall" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="fullName" optional="YES" attributeType="String"/>
         <attribute name="isMissed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isOutcome" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="numCalls" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="number" optional="YES" attributeType="String"/>
+        <attribute name="timeInSeconds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="recents" inverseEntity="Contact"/>
     </entity>

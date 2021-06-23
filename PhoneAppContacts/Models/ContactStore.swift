@@ -13,7 +13,9 @@ class ContactStore {
         [("Send Message", ""), ("Share Contacts", ""), ("Add to Favourites", "")],
         [("Add to Emergency Contacts", "")],
         [("Share My Location", "")],
-        [("Block this Caller", "")]
+        [("Block this Caller", "")],
+        [("Simulate Missed Call", "")],
+        [("Simulate Outcoming Call", "33")]
     ]
     
     var countSectionsWithInfo: Int!

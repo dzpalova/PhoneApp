@@ -8,6 +8,9 @@ class ContactsViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet var userCardView: UIView!
     var searchBar: UISearchController!
     
+    
+    private var alphabetArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    
     override func viewDidLoad() {
         allContactItems = AllContactsStore()
         contactItems = allContactItems
@@ -61,7 +64,7 @@ class ContactsViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactItem", for: indexPath)
         let contact = contactItems.getContact(indexPath)
-        cell.textLabel?.text = (contact.firstName ?? "") + " " + (contact.lastName ?? "")
+        cell.textLabel?.text = contact.getFullName()
         return cell
     }
     
@@ -71,6 +74,14 @@ class ContactsViewController: UITableViewController, UISearchBarDelegate {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return contactItems.numSections
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return alphabetArray.firstIndex(where: { $0 == title }) ?? 26
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return alphabetArray
     }
 
     private func createEmptyContact() -> Contact {

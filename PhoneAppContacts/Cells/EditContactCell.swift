@@ -27,7 +27,12 @@ class TextFieldCell: UITableViewCell, LabeledCell, EditCell {
         field.contentVerticalAlignment = item.name == "Notes" ? .top : .center
         
         field.addTarget(self, action: #selector(cellDataChanged), for: .editingChanged)
+        
+        if field.placeholder == "First name" && field.text!.isEmpty {
+            field.becomeFirstResponder()
+        }
     }
+    
     @objc func cellDataChanged() {
         EditContactController.editedContact[indexOfCell.row] = field.text!
     }
@@ -101,6 +106,10 @@ class RemoveItemcell: UITableViewCell, LabeledCell, EditCell {
         
         type.indexOfCell = indexOfCell
         type.contactInfo = contactInfo
+        
+        if value.text!.isEmpty {
+            value.becomeFirstResponder()
+        }
     }
     
     private func setLine() {
@@ -179,6 +188,10 @@ class RemoveAddressCell: UITableViewCell, EditCell {
         type.indexOfCell = indexOfCell
         
         setLine()
+        
+        if [street, city, state, ZIP].allSatisfy { $0!.text!.isEmpty } {
+            street.becomeFirstResponder()
+        }
     }
     
     private func setLine() {

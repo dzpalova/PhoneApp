@@ -2,7 +2,7 @@
 //  RecentCall+CoreDataProperties.swift
 //  PhoneAppContacts
 //
-//  Created by Daniela Palova on 16.06.21.
+//  Created by Daniela Palova on 18.06.21.
 //
 //
 
@@ -17,11 +17,11 @@ extension RecentCall {
     }
 
     @NSManaged public var date: Date?
-    @NSManaged public var fullName: String?
     @NSManaged public var isMissed: Bool
     @NSManaged public var isOutcome: Bool
-    @NSManaged public var numCalls: Int64
+    @NSManaged public var number: String?
     @NSManaged public var type: String?
+    @NSManaged public var timeInSeconds: Int64
     @NSManaged public var contact: Contact?
 
 }
